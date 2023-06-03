@@ -4,7 +4,6 @@ from PIL import Image
 
 model_name = "Salesforce/blip-image-captioning-base"
 
-# getting the model
 
 #title
 st.title("Image Caption Generator")
@@ -15,18 +14,22 @@ st.markdown("This application helps you to generate caption on your image")
 #image uploader
 image = st.file_uploader(label = "Upload your image here",type=['png','jpg','jpeg'])
 
+@st.cache_data(show_spinner="Loading processor")
+def load_processor(model_name): 
+    processor = BlipProcessor.from_pretrained(model_name) 
+    return processor
 
-@st.cache_data
+@st.cache_data(show_spinner="Fetching model ...")  
 def load_model(model_name): 
-    processor = BlipProcessor.from_pretrained(model_name)
     model = BlipForConditionalGeneration.from_pretrained(model_name) 
-    return [processor, model]
+    return model
 
-processor, model = load_model(model_name) #load model
+processor = load_processor(model_name)
+model = load_model(model_name)
 
 if image is not None:
 
-    input_image = Image.open(image) #read image
+    input_image = Image.open(image) 
     # st.image(input_image) #display image
 
     with st.spinner("Creating the captions "):
@@ -39,10 +42,7 @@ if image is not None:
         
 
 
-        result_text = {"Caption1": result} #empty list for results
-
-
-    
+        result_text = {"Caption": result} 
 
         st.write(result_text)
         
