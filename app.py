@@ -16,7 +16,7 @@ st.markdown("This application helps you to generate caption on your image")
 image = st.file_uploader(label = "Upload your image here",type=['png','jpg','jpeg'])
 
 
-@st.cache
+@st.cache_data
 def load_model(model_name): 
     processor = BlipProcessor.from_pretrained(model_name)
     model = BlipForConditionalGeneration.from_pretrained(model_name) 
