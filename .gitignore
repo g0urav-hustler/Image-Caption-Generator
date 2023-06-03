@@ -1,0 +1,10 @@
+# ignore image command
+*.jpg
+*.jpeg
+*.jpe
+*.jif
+*.jfif
+*.jfi
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
