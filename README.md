@@ -13,6 +13,6 @@ pinned: false
 This is an application for generating caption on images.
 It was uploaded to hugging face platform. 
 
-**link** - https://huggingface.co/spaces/g0urav-hustler/Image-Caption-Generator
+**Link** - https://huggingface.co/spaces/g0urav-hustler/Image-Caption-Generator
 
 It was built using hugging face pretrained model "Salesforce/blip-image-captioning-base"

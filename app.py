@@ -40,7 +40,7 @@ if image is not None:
         out = model.generate(**inputs)
         result = processor.decode(out[0], skip_special_tokens=True)
 
-        st.write(result)
+        st.write("You can use captions as - " + result)
         
    
 else:
