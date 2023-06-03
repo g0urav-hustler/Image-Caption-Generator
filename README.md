@@ -1,6 +1,6 @@
 ---
 title: Image Caption Generator
-emoji: :blush:
+emoji: 🤗
 colorFrom: blue
 colorTo: red
 sdk: streamlit
