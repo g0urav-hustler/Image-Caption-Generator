@@ -25,7 +25,7 @@ processor = load_processor(model_name)
 model = load_model(model_name)
 
 #image uploader
-image = st.file_uploader(label = "Upload your image here",type=['png','jpg','jpeg'])
+image = st.file_uploader(label = "Upload your image here", type=['png','jpg','jpeg'])
 
 if image is not None:
 
@@ -41,8 +41,6 @@ if image is not None:
         result = processor.decode(out[0], skip_special_tokens=True)
 
         st.write("You can use captions as - " + result)
-        
-   
 else:
     st.write("Upload an Image first")
 
